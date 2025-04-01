@@ -20,3 +20,27 @@ window.addEventListener("scroll", function () {
         sobreMim.classList.remove("ativo");
     }
 });
+
+const items = document.querySelectorAll('.item');
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalText = document.getElementById('modal-text');
+const closeModal = document.querySelector('.close-btn');
+
+items.forEach(item => {
+    item.addEventListener('click', () => {
+        modalTitle.textContent = item.getAttribute('data-title');
+        modalText.textContent = item.getAttribute('data-text');
+        modal.style.display = 'flex';
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
