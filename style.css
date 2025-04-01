@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    transition: .5s;
+    font-weight: bold;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+.menu-container {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.trilho {
+    width: 60px;
+    height: 30px;
+    background-color: #f2146e;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.trilho .indicador {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    transition: .3s ease-in-out;
+}
+
+.trilho.dark {
+    background-color: #f2146e;
+}
+
+.trilho.dark .indicador {
+    left: 30px;
+    background-color: #fff;
+}
+
+body.dark {
+    background-color: #f1dacc;
+}
+
+body.dark h1 {
+    color: black;
+}
+
+.logo {
+    width: 40px;
+    height: 32px;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.intro-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f2146e;
+}
+
+.intro-subtitle {
+    font-size: 2rem;
+    color: white;
+    margin-top: 10px;
+}
+
+.intro-text {
+    font-size: 2rem;
+    color: white;
+    margin-top: 5px;
+}
+
+body.dark h2 {
+    color: black;
+}
+
+body.dark p {
+    color: black;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaço entre os ícones */
+    margin-top: 30px;
+}
+
+.links i {
+    font-size: 40px; /* Tamanho inicial dos ícones */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição suave */
+    margin: 15px;
+}
+
+.links i:hover {
+    transform: scale(1.2); /* Aumenta os ícones quando passar o mouse */
+    color: #f2146e; /* Muda a cor do ícone ao passar o mouse (pode ser a mesma cor ou outra) */
+}
+
+.saiba-mais {
+    text-align: center;
+    margin-top: 160px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.flechas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2rem;
+    color: #f2146e;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* Estilo geral para as nuvens */
+.nuvem {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-color: rgba(228, 0, 97, 1);
+    border-radius: 60% 90% 50% 80%;
+    filter: blur(150px);
+    opacity: 1;
+    animation: moverFumaça 8s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+/* Nuvem no canto superior direito */
+.cima-direita {
+    top: -120px;
+    right: -120px;
+    animation-delay: 1s; /* Pequeno atraso para diferenciar os movimentos */
+}
+
+/* Nuvem no canto inferior esquerdo */
+.baixo-esquerda {
+    bottom: -120px;
+    left: -120px;
+}
+
+/* Animação de movimento mais forte */
+@keyframes moverFumaça {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(80px, 40px) scale(1.2);
+    }
+    50% {
+        transform: translate(-60px, -30px) scale(1.4);
+    }
+    75% {
+        transform: translate(40px, -50px) scale(1.1);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.sobre-mim {
+    opacity: 0;
+    transform: translateY(50px); /* Começa deslocado para baixo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    margin-top: 200px;
+}
+
+.sobre-mim.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sobre-mim h2 {
+    font-size: 2rem;
+    color: #e40061;
+    margin-bottom: 20px;
+}
+
+/* Container rosa */
+.sobre-mim-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(228, 0, 97, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #e40061; /* Borda rosa */
+    max-width: 1200px; /* Aumentando a largura do contêiner */
+    height: 500px;
+    margin: 0 auto; /* Centraliza a div */
+    position: relative;
+    top: 50%; /* Para colocar no centro vertical */
+    transform: translateY(-50%); /* Ajusta a posição */
+}
+
+/* Ajustando as colunas */
+.sobre-mim-texto {
+    flex: 2; /* O texto ocupará mais espaço */
+    padding: 20px;
+    color: #f1dacc;
+}
+
+.educacao {
+    flex: 1; /* A imagem ocupará menos espaço */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centraliza a imagem */
+}
+
+.educacao img {
+    width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .sobre-mim-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .sobre-mim-texto, .educacao {
+        padding: 10px;
+    }
+
+    .educacao img {
+        width: 150px; /* Ajuste a imagem para telas pequenas */
+    }
+}
+
+.teste {
+    margin-bottom: 200px;
+}
+
+.apresentacao {
+    color: #f2146e;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
