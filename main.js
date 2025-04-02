@@ -67,3 +67,51 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    function scrollToSection(nextSection, offset = 0) {
+        const section = document.getElementById(nextSection);
+        if (section) {
+            const topPosition = section.offsetTop - offset;
+            window.scrollTo({
+                top: topPosition,
+                behavior: "smooth"
+            });
+        }
+    }
+
+    // Flechas da primeira seção (ajuste fino para subir menos)
+    document.querySelectorAll(".flechas span").forEach(flecha => {
+        flecha.addEventListener("click", function () {
+            scrollToSection("sobre-mim", 50); // Ajuste para cima
+        });
+    });
+
+    // Flechas da segunda seção (ajuste para descer mais)
+    document.querySelectorAll(".flechas2 span").forEach(flecha => {
+        flecha.addEventListener("click", function () {
+            scrollToSection("habilidades", -50); // Ajuste para baixo
+        });
+    });
+
+    // Flechas da terceira seção (mantém padrão)
+    document.querySelectorAll(".flechas3 span").forEach(flecha => {
+        flecha.addEventListener("click", function () {
+            scrollToSection("projetos");
+        });
+    });
+});
+
+window.addEventListener("scroll", function () {
+    let secoes = document.querySelectorAll("section"); // Seleciona todas as seções
+    let telaMetade = window.innerHeight / 1.3;
+
+    secoes.forEach((secao) => {
+        let posicao = secao.getBoundingClientRect().top;
+
+        if (posicao < telaMetade) {
+            secao.classList.add("ativo");
+        } else {
+            secao.classList.remove("ativo");
+        }
+    });
+});

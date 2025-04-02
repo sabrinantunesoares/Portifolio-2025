@@ -82,6 +82,7 @@ h1 {
 
 body.dark {
     background-color: #f1dacc;
+    
 }
 
 body.dark h1 {
@@ -131,6 +132,7 @@ body.dark p {
     margin-top: 30px;
 }
 
+
 .links i {
     font-size: 40px; /* Tamanho inicial dos ícones */
     transition: transform 0.3s ease, color 0.3s ease; /* Transição suave */
@@ -166,7 +168,17 @@ body.dark p {
     font-size: 2rem;
     color: #f2146e;
     animation: bounce 1.5s infinite;
-    margin-top: 40px;
+    margin-top: 50px;
+}
+
+.flechas3 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2rem;
+    color: #f2146e;
+    animation: bounce 1.5s infinite;
+    margin-top: 5px;
 }
 
 @keyframes bounce {
@@ -200,6 +212,21 @@ body.dark p {
     left: -120px;
 }
 
+.baixo-direita {
+    bottom: -900px;
+    right: -160px;
+}
+
+.cima-esquerda {
+    bottom: -1500px;
+    left: -120px;
+}
+
+.ultima {
+    bottom: -2400px;
+    right: -160px;
+}
+
 /* Animação de movimento mais forte */
 @keyframes moverFumaça {
     0% {
@@ -223,7 +250,7 @@ body.dark p {
     opacity: 0;
     transform: translateY(50px); /* Começa deslocado para baixo */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    margin-top: 200px;
+    margin-top: 80px;
 }
 
 .sobre-mim.ativo {
@@ -348,6 +375,7 @@ body.dark p {
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-top: 30px;
 }
 
 
@@ -389,15 +417,15 @@ body.dark p {
 .tituloHabilidades {
     color: #f2146e;
     font-size: 2rem;
-    margin-top: 200px;
-    margin-bottom: 70px;
+    margin-top: 100px;
+    margin-bottom: 5px;
 }
 
 .tituloProjetos {
     color: #f2146e;
     font-size: 2rem;
-    margin-top: 230px;
-    margin-bottom: 70px;
+    margin-top: 40px;
+    margin-bottom: 5px;
 }
 
 .modal { 
@@ -518,3 +546,74 @@ body.dark p {
         text-align: center;
     }
 }
+
+.links2 {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Espaço entre os ícones */
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+
+.links2 i {
+    font-size: 50px; /* Tamanho inicial dos ícones */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição suave */
+    margin: 15px;
+}
+
+.links2 i:hover {
+    transform: scale(1.2); /* Aumenta os ícones quando passar o mouse */
+    color: #f2146e; /* Muda a cor do ícone ao passar o mouse (pode ser a mesma cor ou outra) */
+}
+
+.tituloContatos {
+    color: #f2146e;
+    font-size: 2rem;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.links2 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Para garantir responsividade */
+}
+
+.contato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contato-item i {
+    font-size: 32px; /* Ajuste o tamanho do ícone */
+    margin-bottom: 5px; /* Espaço entre ícone e texto */
+}
+
+.contato-item a {
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    color: #f1dacc;
+}
+
+body.dark .contato-item a {
+    color: black;
+}
+
+section {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(50px); /* Levemente deslocado para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
