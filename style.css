@@ -159,6 +159,16 @@ body.dark p {
     animation: bounce 1.5s infinite;
 }
 
+.flechas2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2rem;
+    color: #f2146e;
+    animation: bounce 1.5s infinite;
+    margin-top: 40px;
+}
+
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(10px); }
@@ -379,7 +389,7 @@ body.dark p {
 .tituloHabilidades {
     color: #f2146e;
     font-size: 2rem;
-    margin-top: 90px;
+    margin-top: 200px;
     margin-bottom: 70px;
 }
 
@@ -408,4 +418,103 @@ body.dark p {
 
 .close-btn {
     position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px;
+}
+
+.projetos {
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+.projeto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(228, 0, 97, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #e40061;
+    max-width: 1200px;
+    margin: 20px auto;
+
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 2px solid #e40061;
+}
+
+.projeto-info {
+    flex: 1;
+    padding-left: 30px;
+    color: #f1dacc;
+    text-align: left;
+}
+
+.projeto-info h4 {
+    font-size: 1.8rem;
+    color: #e40061;
+    margin-bottom: 10px;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.tecnologias i {
+    font-size: 30px;
+    color: #f2146e;
+}
+
+.projeto-links {
+    margin-top: 15px;
+}
+
+.github-btn, .demo-btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+
+
+.github-btn {
+    background: #f1dacc;
+    color: black;
+}
+
+.demo-btn {
+    background: #e40061;
+    color: white;
+}
+
+.github-btn:hover, .demo-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .projeto-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .projeto-info {
+        padding-left: 0;
+        padding-top: 20px;
+        text-align: center;
+    }
 }
