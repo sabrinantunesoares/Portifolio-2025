@@ -13,6 +13,9 @@ body {
     background-color: black;
     transition: .5s;
     font-weight: bold;
+    width: 100%;
+    overflow-x: hidden;
+    
 }
 
 .menu {
@@ -30,6 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    
 }
 
 .menu-left {
@@ -144,6 +148,12 @@ body.dark p {
     color: #f2146e; /* Muda a cor do ícone ao passar o mouse (pode ser a mesma cor ou outra) */
 }
 
+
+.links a:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 .saiba-mais {
     text-align: center;
     margin-top: 160px;
@@ -152,34 +162,53 @@ body.dark p {
     color: white;
 }
 
-.flechas {
+.flechas, .flechas2, .flechas3 {
     display: flex;
     justify-content: center;
     gap: 10px;
     font-size: 2rem;
     color: #f2146e;
     animation: bounce 1.5s infinite;
+    cursor: pointer; /* Indica que é clicável */
+    transition: transform 0.2s, color 0.2s;
 }
 
 .flechas2 {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 2rem;
-    color: #f2146e;
-    animation: bounce 1.5s infinite;
     margin-top: 50px;
 }
 
 .flechas3 {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 2rem;
-    color: #f2146e;
-    animation: bounce 1.5s infinite;
     margin-top: 5px;
 }
+
+/* Efeito ao passar o mouse (modo normal) */
+.flechas:hover, .flechas2:hover, .flechas3:hover {
+    color: #fff; /* Cor branca */
+    transform: scale(1.2); /* Aumenta ligeiramente */
+}
+
+/* Efeito ao passar o mouse no modo escuro */
+.dark .flechas:hover, 
+.dark .flechas2:hover, 
+.dark .flechas3:hover {
+    color: #000; /* Fica preto no modo escuro */
+}
+
+.flechas:active, .flechas2:active, .flechas3:active {
+    transform: scale(0.9); /* Dá um efeito de clique */
+}
+
+/* Animação ao clicar */
+.clicked {
+    animation: rotate-click 0.3s ease-in-out;
+}
+
+@keyframes rotate-click {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(15deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -198,6 +227,7 @@ body.dark p {
     animation: moverFumaça 8s infinite alternate ease-in-out;
     z-index: -1;
 }
+
 
 /* Nuvem no canto superior direito */
 .cima-direita {
@@ -281,10 +311,15 @@ body.dark p {
     transform: translateY(-50%); /* Ajusta a posição */
 }
 
+
+.foto {
+    border: 2px solid #e40061;
+}
+
 /* Ajustando as colunas */
 .sobre-mim-texto {
     flex: 2; /* O texto ocupará mais espaço */
-    padding: 20px;
+    
     color: #f1dacc;
 }
 
@@ -293,6 +328,8 @@ body.dark p {
     padding: 20px;
     display: flex;
     justify-content: center; /* Centraliza a imagem */
+    text-align: center; /* Centraliza tudo dentro da div */
+    margin-bottom: 20px;
 }
 
 .educacao img {
@@ -387,7 +424,7 @@ body.dark p {
     justify-content: center;
     align-items: center;
     background-color: rgba(228, 0, 97, 0.1);
-    
+    cursor: pointer;
     border-radius: 8px;
     transition: transform 0.3s ease;
     margin: 15px; 
@@ -425,7 +462,7 @@ body.dark p {
     color: #f2146e;
     font-size: 2rem;
     margin-top: 40px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .modal { 
@@ -508,30 +545,38 @@ body.dark p {
     margin-top: 15px;
 }
 
-.github-btn, .demo-btn {
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+.projeto-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
     font-weight: bold;
-    margin-right: 10px;
-    transition: 0.3s;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .github-btn {
-    background: #f1dacc;
-    color: black;
-}
-
-.demo-btn {
-    background: #e40061;
+    background-color: #24292e;
     color: white;
 }
 
-.github-btn:hover, .demo-btn:hover {
-    transform: scale(1.1);
+.demo-btn {
+    background-color: #e40061;
+    color: white;
 }
+
+.projeto-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.projeto-links a:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 
 @media (max-width: 768px) {
     .projeto-item {
@@ -600,7 +645,13 @@ body.dark p {
     text-decoration: none;
     transition: color 0.3s ease-in-out;
     color: #f1dacc;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.contato-item a:hover {
+    transform: scale(1.2);
+}
+
 
 body.dark .contato-item a {
     color: black;
@@ -615,5 +666,37 @@ section {
 section.ativo {
     opacity: 1;
     transform: translateY(0);
+}
+
+.seta {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+   
+    color: #f1dacc;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    transition: opacity 0.3s;
+}
+
+.seta:hover {
+    background-color: #e40061;
+}
+
+.seta.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.dark .seta {
+    color: #e40061;
+}
+
+body.dark .seta:hover {
+    color: #f1dacc;
+    background-color: #f2146e;
 }
 

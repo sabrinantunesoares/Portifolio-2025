@@ -115,3 +115,20 @@ window.addEventListener("scroll", function () {
         }
     });
 });
+
+function irParaTopo() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener("scroll", function() {
+    const seta = document.querySelector(".seta");
+    if (window.scrollY > 200) {
+        seta.classList.remove("hidden");
+    } else {
+        seta.classList.add("hidden");
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".seta").classList.add("hidden");
+});
