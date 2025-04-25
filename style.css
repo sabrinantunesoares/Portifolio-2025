@@ -616,7 +616,38 @@ body.dark p {
         padding-top: 20px;
         text-align: center;
     }
+
+    .linha {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .item {
+        width: 45%; /* Aproximadamente 2 por linha com espaçamento */
+        margin: 10px;
+    }
+
+    .habilidades i,
+    .habilidades img {
+        font-size: 60px;
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+    }
+
+    .tituloHabilidades,
+    .tituloProjetos {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .habilidades p.sobre-mim-texto {
+        text-align: center;
+        padding: 0 20px;
+    }
 }
+
 
 .links2 {
     display: flex;
